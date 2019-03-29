@@ -23,8 +23,8 @@ class PostsController < ApplicationController
 	end
 
 	def update
-		post = Post.find(post_params)
-		post.update(params.require(:post))
+		post = Post.find(params[:id])
+		post.update(post_params)
 		redirect_to post_path(post)
 	end
 	
